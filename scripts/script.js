@@ -90,7 +90,15 @@ generateBtn.addEventListener("click", function(){
     routineContainer.style.display = "block"
     landing.style.display = "none";
 
+    const totalInputs = document.getElementsByClassName("form-control");
     
+    for(let i = 0; i < totalInputs.length; i++){
+        let courseCode = document.getElementsByClassName("course-input" + i)[0].value;
+        let days = document.getElementsByClassName("day-input" + i)[0].innerText;
+        let startTime = document.getElementsByClassName("start-input" + i)[0].innerText;
+        let endTime = document.getElementsByClassName("end-input" + i)[0].innerText;
+        console.log(courseCode,days,startTime,endTime);
+    }
 })
 
 const goBackBtn = document.getElementById("go-back-btn");
