@@ -44,3 +44,9 @@ table {
   padding-top: 10px;
   border-top: 1px solid #868686;
 }
+
+@media print {
+  .submit {
+    display: none;
+  }
+}
