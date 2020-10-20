@@ -97,7 +97,30 @@ generateBtn.addEventListener("click", function(){
         let days = document.getElementsByClassName("day-input" + i)[0].innerText;
         let startTime = document.getElementsByClassName("start-input" + i)[0].innerText;
         let endTime = document.getElementsByClassName("end-input" + i)[0].innerText;
-        console.log(courseCode,days,startTime,endTime);
+        
+        for(let j = 0; j < days.length; j++){
+            let searchKey = days[j] + startTime [0];
+            if(startTime[1] == "1"){
+                searchKey += "1";
+            }
+
+            let box = document.getElementById(searchKey);
+            box.innerText = courseCode;
+
+            for(let k = 0; k < endArray.length; k++){
+                if(startTime == startArray[k] && endTime != endArray[k]){
+                    box.setAttribute("colspan","2");
+                    let removeStartTime = days[j] + startArray[k+1][0];
+                    if(startArray[k+1][1] == "1"){
+                        removeStartTime += "1";
+                    }
+                    let node = document.getElementById(removeStartTime);
+                    if (node.parentNode) {
+                        node.parentNode.removeChild(node);
+                    }
+                }
+            }
+        }
     }
 })
 
