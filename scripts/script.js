@@ -81,7 +81,7 @@ dropDownEventListener();
 const generateBtn = document.getElementById("generate-btn");
 
 const startArray = ["8:00AM","9:40AM","11:20AM","1:00PM","2:40PM","4:20PM"];
-const endArray = ["9:30AM","11:10AM","12:50PM","2:30PM","4:10PM"];
+const endArray = ["9:30AM","11:10AM","12:50PM","2:30PM","4:10PM","5:50PM"];
 
 const routineContainer = document.getElementsByClassName("routine-container")[0];
 const landing = document.getElementsByClassName("landing")[0];
@@ -129,4 +129,10 @@ const goBackBtn = document.getElementById("go-back-btn");
 goBackBtn.addEventListener("click",function(){
     landing.style.display = "block";
     routineContainer.style.display = "none";
+})
+
+
+const printBtn = document.getElementById("print-btn");
+printBtn.addEventListener("click",function(){
+    window.print();
 })
