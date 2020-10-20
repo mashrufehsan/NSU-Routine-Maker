@@ -136,3 +136,18 @@ const printBtn = document.getElementById("print-btn");
 printBtn.addEventListener("click",function(){
     window.print();
 })
+
+const themeBtn = document.getElementById("theme-switch");
+themeBtn.addEventListener("click",function(){
+    const printArea = document.getElementById("print-area");
+    if(themeBtn.innerText.startsWith("L")){
+        printArea.setAttribute("class","table table-striped table-bordered");
+        themeBtn.setAttribute("class","btn btn-dark");
+        themeBtn.innerText = "Dark mode";
+    }
+    else{
+        printArea.setAttribute("class","table table-striped table-dark table-bordered");
+        themeBtn.setAttribute("class","btn btn-light");
+        themeBtn.innerText = "Light mode";
+    }
+})
